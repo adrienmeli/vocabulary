@@ -1,0 +1,266 @@
+---
+author: "Adrien Méli"
+title: "Le vocabulaire"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+bibliography: /home/adrien/github/dotfiles/tex/biblio.bib
+biblio-style: "apalike"
+always_allow_html: true
+link-citations: true
+numbersections: true
+fontsize: 10pt
+output:
+  bookdown::html_document2:
+    toc: true
+    toc_float: true
+    toc_depth: 2
+    number_sections: false
+    theme: spacelab
+    #css: [css/one-column.css, "https://use.fontawesome.com/releases/v5.7.2/css/all.css"]
+    #default, cerulean, journal, flatly, darkly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, and yeti
+    highlight: haddock
+    fig_width: 4
+    fig_height: 3
+    fig_caption: true
+  bookdown::pdf_document2:
+    keep_tex: false
+    toc: true
+    toc_depth: 1
+    number_sections: true
+    #fig_width: 3
+    #fig_height: 1
+    fig_caption: true
+    fig_crop: true
+    df_print: kable
+    highlight: tango
+    includes:
+      in_header: /home/adrien/github/dotfiles/tex/rmd-preamble.tex
+fontawesome: yes
+---
+
+<style>
+body {
+text-align: justify}
+</style>
+
+
+```{r setup, include = FALSE}
+source('/home/adrien/github/dotfiles/r/rmarkdown-template.R')
+
+knitr::opts_knit$set(root.dir = '/tmp', echo = FALSE, warning = FALSE, message = FALSE, fig.align = "center")
+```
+
+Comment constituer une liste de vocabulaire anglais ?
+
+Le vocabulaire s'apprend plus efficacement si la liste de mots reflète certaines caractéristiques grammaticales.
+
+Voici pour les principales catégories grammaticales quelques conseils sur les informations à inclure dans votre liste de vocabulaire.
+Ces conseils sont assortis de quelques rappels et astuces.
+
+# Les noms anglais
+
+En anglais, certains noms peuvent se mettre au pluriel, d'autres ne le peuvent pas.
+
+Les premiers sont dits "**comptables**", les deuxièmes, "**incomptables**".
+
+## Les noms comptables
+
+Ces noms prennent obligatoirement un article au singulier.
+Ils se mettent généralement au pluriel avec le suffixe <-(e)s>.
+
+> **Conseil :** Dans votre liste de vocabulaire, faites précéder les noms comptables de l'article indéfini "*a*".
+>
+> *Exemple : "a tool" $\rightarrow$* "un outil".
+
+## Les noms incomptables
+
+Ces noms ne peuvent pas se mettre au pluriel.
+
+> **Conseil :** Dans votre liste de vocabulaire, indiquez les noms incomptables par "*(U)*", pour "*uncountable*".
+>
+> *Exemple : "evidence (U)" $\rightarrow$* "des preuves".
+
+## Bon à savoir 
+
+### Mots courants incomptables
+
+Attention aux noms suivants, qui ne se mettent pas au pluriel en anglais :
+
+* *information (U)*
+* *furniture (U)* ("meuble")
+* *advice (U)* ("conseil")
+
+Pour dire "un meuble" ou "un conseil", on dira "*a piece of furniture*" ou "*a piece of advice*".
+
+### Singuliers avec <-s>
+
+Les mots suivants ont un <-s> au singulier :
+
+* *a series* ("une série")
+* *a means* ("un moyen")
+* *a species* ("une espèce")
+ 
+Attention aussi à `r colorize("*the news*", "red")` ("les nouvelles"), qui est **toujours singulier**.
+
+### Pluriels sans <-s>
+
+Inversement, il existe des noms qui peuvent ou doivent se conjuguer au pluriel :
+
+* `r colorize("*the police*", "red")`  est **toujours pluriel**.
+* *staff*, *team* ou *family* peuvent se conjuguer au pluriel.
+
+# Les adjectifs
+
+Les adjectifs anglais sont **invariables**, et se placent **avant** le nom.
+
+* "Des maisons bleues" $\rightarrow$ *blue houses*.
+
+> **Conseil :** Dans votre liste de vocabulaire, indiquez bien la préposition avec laquelle l'adjectif se construit.
+>
+> *Exemple : "similar **to**" $\rightarrow$* "semblable à".
+
+Voici quelques exemples d'adjectifs fréquents se construisant avec des prépositions différentes du français :
+
+* *responsible **for*** $\rightarrow$ "responsable de"
+* *dependent **on*** $\rightarrow$ "dépendant de"
+* *addicted **to*** $\rightarrow$ "accroc à"
+* *interested **in*** $\rightarrow$ "intéressé par"
+* *good **at*** $\rightarrow$ "bon en"
+* *different **from*** $\rightarrow$ "différent de"
+* *worried **about*** $\rightarrow$ "inquiet de"
+* *surprised **at*** $\rightarrow$ "surpris par"
+
+# Les verbes
+
+> **Conseil :** Dans votre liste de vocabulaire, faites précéder les verbes de "*to*" afin de les distinguer des autres catégories grammaticales.
+>
+> *Exemple : "to row" $\rightarrow$* "ramer"
+
+Comme les adjectifs, les verbes s'apprennent avec leur **construction**.
+
+## Les verbes transitifs 
+
+On distingue les **verbes transitifs directs**, qui admettent un complément d'objet direct, des **verbes transitifs indirects**, dont le complément 
+est séparé du verbe par une préposition.
+
+Considérez les exemples suivants :
+
+* *to listen **to** stg* $\rightarrow$ "écouter qqch"
+* *to look **for** stg* $\rightarrow$ "chercher qqch"
+* *to look **at** stg* $\rightarrow$ "regarder qqch"
+
+Dans ces exemples, le verbe anglais est transitif indirect, tandis que le verbe français est transitif direct.
+
+À l'inverse :
+
+* *to obey sb* $\rightarrow$ "obéir **à** qn"
+
+
+> **Conseil :** Dans votre liste de vocabulaire, indiquez la construction du verbe avec "*stg*" ("*something*") ou "*sb*" ("*somebody*").
+>
+> *Exemple : "to blame sb for stg" $\rightarrow$* "reprocher qqch à qn"
+
+## Les verbes intransitifs
+
+Ces verbes se contruisent sans complément, et par conséquent ne peuvent se mettre au passif.
+
+*Exemples : "to rain", "to lie", "to rise"*.
+
+## Bon à savoir
+
+
+### Une confusion fréquente
+
+Ne confondez plus :
+
+* "*rise (rose risen)*" et "*raise*" ;
+* "*lie (lay lain)*" et "*lay*".
+
+| **Intransitif**                  | **Transitif**                   |
+|:--------------------------------:|:-------------------------------:|
+| *to rise (rose risen)*   $\rightarrow$ "élever" | *to raise stg* $\rightarrow$  "lever qqch"                |
+| *to lie (lay lain)*  $\rightarrow$ "se situer"  | *to lay stg*  $\rightarrow$ "poser qqch"                  |
+
+Notez aussi que les deux intransitifs, "*rise*" et "*lie*", se prononcent avec `r tipa("/ a I /")` comme
+dans "*high*".
+
+Les deux transitifs se prononcent eux avec `r tipa("/ e I /")`, comme dans "*say*".
+
+
+
+
+# Les adverbes
+
+Les adverbes fonctionnent comme en français : ils qualifient généralement un verbe et son complément de la même manière qu'un adjectif qualifie un nom.
+
+Attention à l'emplacement des adverbes dits "de fréquence", qui s'insèrent souvent entre le sujet et le verbe conjugué :
+
+* *He **often** speaks to himself* $\rightarrow$ Il se parle souvent à lui-même.
+
+# Les prépositions
+
+(W.I.P.)
+
+
+# Vocabulaire {.tabset .tabset-fade .tabset-pills}
+
+
+## DNMADE1ANG2
+
+```{r, echo=FALSE, results='asis', message = FALSE }
+
+df1 <- read_delim("/home/adrien/databases/dn1a2-vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+
+if (knitr::is_latex_output()) {
+  knitr::kable(df1, "latex", booktabs = T, longtable = T) %>%
+    collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
+    kable_styling(latex_options = c("scale_down","striped"),position = "center")
+
+} else if (knitr::is_html_output()) {
+  knitr::kable(df1,  captions=NULL) %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+    collapse_rows(columns = 1:2, valign = "top")
+
+} 
+```
+
+## DN2
+
+```{r, echo=FALSE, results='asis', message = FALSE }
+
+df2 <- read_delim("/home/adrien/databases/dn2-vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+
+if (knitr::is_latex_output()) {
+  knitr::kable(df2, "latex", booktabs = T, longtable = T) %>%
+    collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
+    kable_styling(latex_options = c("scale_down","striped"),position = "center")
+
+} else if (knitr::is_html_output()) {
+  knitr::kable(df2,  captions=NULL) %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+    collapse_rows(columns = 1:2, valign = "top")
+
+} 
+
+```
+
+## ERPC
+
+
+```{r, echo=FALSE, results='asis', message = FALSE }
+
+df3 <- read_delim("/home/adrien/databases/erpc-vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+
+if (knitr::is_latex_output()) {
+  knitr::kable(df3, "latex", booktabs = T, longtable = T) %>%
+    collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
+    kable_styling(latex_options = c("scale_down","striped"),position = "center")
+
+} else if (knitr::is_html_output()) {
+  knitr::kable(df3,  captions=NULL) %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+    collapse_rows(columns = 1:2, valign = "top")
+
+} 
+
+```
+

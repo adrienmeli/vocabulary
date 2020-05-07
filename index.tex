@@ -1,0 +1,812 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Le vocabulaire},
+  pdfauthor={Adrien Méli},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{fontawesome}
+\usepackage{amsmath}
+\usepackage{tipa}
+\usepackage{moodle}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage[light,sfdefault]{roboto}
+\usepackage{titlesec}
+%\usepackage{tufte-book}
+%\usepackage{fourier}
+%\usepackage{montserrat}
+%\usepackage[T1]{fontenc}
+%\usepackage[french]{babel}
+
+% -----------------------------------------------------------------
+% Hyper Setup
+% -----------------------------------------------------------------
+\hypersetup{
+    %bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat�s bookmarks
+    pdftoolbar=true,        % show Acrobat�s toolbar?
+    pdfmenubar=true,        % show Acrobat�s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    %pdftitle={},    % title
+    pdfauthor={Adrien Meli},     % author 
+    pdfsubject={Phonological rules},   % subject of the document
+    pdfcreator={Creator},   % creator of the document
+    pdfproducer={Producer}, % producer of the document
+    pdfkeywords={Second Language Acquisition, French, English, phonology}, % list of keywords
+    pdfnewwindow=true,     % links in new window
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=black,          % color of internal links
+    citecolor=black,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue,           % color of external links
+    bookmarksopen=false,
+    anchorcolor=black,
+    bookmarksnumbered=true,
+    pdfpagemode=UseOutlines,    %None/UseOutlines/UseThumbs/FullScreen
+    linktocpage=true
+}
+
+% ********************Captions and Hyperreferencing / URL **********************
+
+% Captions: This makes captions of figures use a boldfaced small font.
+
+\usepackage[margin=10pt,font=small,labelfont=bf,labelsep=endash]{caption}
+
+% -----------------------------------------------------------------
+% TABLE OF CONTENTS
+% -----------------------------------------------------------------
+\usepackage[dotinlabels]{titletoc}
+\titlecontents{section}[0em] % entries are pushed to the rtight
+  {} % code to change the appearance
+  {} % section number: increase distance to push to the left
+  {\hspace*{3.3em}}
+  {\titlerule*[1.9mm]{.}\contentspage}
+% remove subsections from TOC
+\setcounter{tocdepth}{1}
+
+% multi-line curly brackets
+
+\newenvironment{rightbracedtext}
+ {$\kern-\nulldelimiterspace\left.\begin{tabular}{@{}l@{}}}
+ {\end{tabular}\right\}$}
+
+\newenvironment{leftbracedtext}{$\left\{\begin{tabular}{@{}l}}{\end{tabular}\right.$}
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}{\LARGE\thechapter}{1ex}
+  {\titlerule[2pt]\vspace{2ex}}[\vspace{1ex}{\titlerule[2pt]}]
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\LARGE\bfseries\filcenter}{}{1ex}
+  {\vspace{2ex}}[\vspace{1ex}]
+
+\title{Le vocabulaire}
+\author{Adrien Méli}
+\date{May 07, 2020}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+Comment constituer une liste de vocabulaire anglais ?
+
+Le vocabulaire s'apprend plus efficacement si la liste de mots reflète certaines caractéristiques grammaticales.
+
+Voici pour les principales catégories grammaticales quelques conseils sur les informations à inclure dans votre liste de vocabulaire.
+Ces conseils sont assortis de quelques rappels et astuces.
+
+\hypertarget{les-noms-anglais}{%
+\section{Les noms anglais}\label{les-noms-anglais}}
+
+En anglais, certains noms peuvent se mettre au pluriel, d'autres ne le peuvent pas.
+
+Les premiers sont dits ``\textbf{comptables}'', les deuxièmes, ``\textbf{incomptables}''.
+
+\hypertarget{les-noms-comptables}{%
+\subsection{Les noms comptables}\label{les-noms-comptables}}
+
+Ces noms prennent obligatoirement un article au singulier.
+Ils se mettent généralement au pluriel avec le suffixe \textless-(e)s\textgreater.
+
+\begin{quote}
+\textbf{Conseil :} Dans votre liste de vocabulaire, faites précéder les noms comptables de l'article indéfini ``\emph{a}''.
+
+\emph{Exemple : ``a tool'' \(\rightarrow\)} ``un outil''.
+\end{quote}
+
+\hypertarget{les-noms-incomptables}{%
+\subsection{Les noms incomptables}\label{les-noms-incomptables}}
+
+Ces noms ne peuvent pas se mettre au pluriel.
+
+\begin{quote}
+\textbf{Conseil :} Dans votre liste de vocabulaire, indiquez les noms incomptables par ``\emph{(U)}'', pour ``\emph{uncountable}''.
+
+\emph{Exemple : ``evidence (U)'' \(\rightarrow\)} ``des preuves''.
+\end{quote}
+
+\hypertarget{bon-uxe0-savoir}{%
+\subsection{Bon à savoir}\label{bon-uxe0-savoir}}
+
+\hypertarget{mots-courants-incomptables}{%
+\subsubsection{Mots courants incomptables}\label{mots-courants-incomptables}}
+
+Attention aux noms suivants, qui ne se mettent pas au pluriel en anglais :
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{information (U)}
+\item
+  \emph{furniture (U)} (``meuble'')
+\item
+  \emph{advice (U)} (``conseil'')
+\end{itemize}
+
+Pour dire ``un meuble'' ou ``un conseil'', on dira ``\emph{a piece of furniture}'' ou ``\emph{a piece of advice}''.
+
+\hypertarget{singuliers-avec--s}{%
+\subsubsection{Singuliers avec \textless-s\textgreater{}}\label{singuliers-avec--s}}
+
+Les mots suivants ont un \textless-s\textgreater{} au singulier :
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{a series} (``une série'')
+\item
+  \emph{a means} (``un moyen'')
+\item
+  \emph{a species} (``une espèce'')
+\end{itemize}
+
+Attention aussi à \textcolor{red}{*the news*} (``les nouvelles''), qui est \textbf{toujours singulier}.
+
+\hypertarget{pluriels-sans--s}{%
+\subsubsection{Pluriels sans \textless-s\textgreater{}}\label{pluriels-sans--s}}
+
+Inversement, il existe des noms qui peuvent ou doivent se conjuguer au pluriel :
+
+\begin{itemize}
+\tightlist
+\item
+  \textcolor{red}{*the police*} est \textbf{toujours pluriel}.
+\item
+  \emph{staff}, \emph{team} ou \emph{family} peuvent se conjuguer au pluriel.
+\end{itemize}
+
+\hypertarget{les-adjectifs}{%
+\section{Les adjectifs}\label{les-adjectifs}}
+
+Les adjectifs anglais sont \textbf{invariables}, et se placent \textbf{avant} le nom.
+
+\begin{itemize}
+\tightlist
+\item
+  ``Des maisons bleues'' \(\rightarrow\) \emph{blue houses}.
+\end{itemize}
+
+\begin{quote}
+\textbf{Conseil :} Dans votre liste de vocabulaire, indiquez bien la préposition avec laquelle l'adjectif se construit.
+
+\emph{Exemple : ``similar \textbf{to}'' \(\rightarrow\)} ``semblable à''.
+\end{quote}
+
+Voici quelques exemples d'adjectifs fréquents se construisant avec des prépositions différentes du français :
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{responsible \textbf{for}} \(\rightarrow\) ``responsable de''
+\item
+  \emph{dependent \textbf{on}} \(\rightarrow\) ``dépendant de''
+\item
+  \emph{addicted \textbf{to}} \(\rightarrow\) ``accroc à''
+\item
+  \emph{interested \textbf{in}} \(\rightarrow\) ``intéressé par''
+\item
+  \emph{good \textbf{at}} \(\rightarrow\) ``bon en''
+\item
+  \emph{different \textbf{from}} \(\rightarrow\) ``différent de''
+\item
+  \emph{worried \textbf{about}} \(\rightarrow\) ``inquiet de''
+\item
+  \emph{surprised \textbf{at}} \(\rightarrow\) ``surpris par''
+\end{itemize}
+
+\hypertarget{les-verbes}{%
+\section{Les verbes}\label{les-verbes}}
+
+\begin{quote}
+\textbf{Conseil :} Dans votre liste de vocabulaire, faites précéder les verbes de ``\emph{to}'' afin de les distinguer des autres catégories grammaticales.
+
+\emph{Exemple : ``to row'' \(\rightarrow\)} ``ramer''
+\end{quote}
+
+Comme les adjectifs, les verbes s'apprennent avec leur \textbf{construction}.
+
+\hypertarget{les-verbes-transitifs}{%
+\subsection{Les verbes transitifs}\label{les-verbes-transitifs}}
+
+On distingue les \textbf{verbes transitifs directs}, qui admettent un complément d'objet direct, des \textbf{verbes transitifs indirects}, dont le complément
+est séparé du verbe par une préposition.
+
+Considérez les exemples suivants :
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{to listen \textbf{to} stg} \(\rightarrow\) ``écouter qqch''
+\item
+  \emph{to look \textbf{for} stg} \(\rightarrow\) ``chercher qqch''
+\item
+  \emph{to look \textbf{at} stg} \(\rightarrow\) ``regarder qqch''
+\end{itemize}
+
+Dans ces exemples, le verbe anglais est transitif indirect, tandis que le verbe français est transitif direct.
+
+À l'inverse :
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{to obey sb} \(\rightarrow\) ``obéir \textbf{à} qn''
+\end{itemize}
+
+\begin{quote}
+\textbf{Conseil :} Dans votre liste de vocabulaire, indiquez la construction du verbe avec ``\emph{stg}'' (``\emph{something}'') ou ``\emph{sb}'' (``\emph{somebody}'').
+
+\emph{Exemple : ``to blame sb for stg'' \(\rightarrow\)} ``reprocher qqch à qn''
+\end{quote}
+
+\hypertarget{les-verbes-intransitifs}{%
+\subsection{Les verbes intransitifs}\label{les-verbes-intransitifs}}
+
+Ces verbes se contruisent sans complément, et par conséquent ne peuvent se mettre au passif.
+
+\emph{Exemples : ``to rain'', ``to lie'', ``to rise''}.
+
+\hypertarget{bon-uxe0-savoir-1}{%
+\subsection{Bon à savoir}\label{bon-uxe0-savoir-1}}
+
+\hypertarget{une-confusion-fruxe9quente}{%
+\subsubsection{Une confusion fréquente}\label{une-confusion-fruxe9quente}}
+
+Ne confondez plus :
+
+\begin{itemize}
+\tightlist
+\item
+  ``\emph{rise (rose risen)}'' et ``\emph{raise}'' ;
+\item
+  ``\emph{lie (lay lain)}'' et ``\emph{lay}''.
+\end{itemize}
+
+\begin{longtable}[]{@{}cc@{}}
+\toprule
+\begin{minipage}[b]{0.48\columnwidth}\centering
+\textbf{Intransitif}\strut
+\end{minipage} & \begin{minipage}[b]{0.46\columnwidth}\centering
+\textbf{Transitif}\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.48\columnwidth}\centering
+\emph{to rise (rose risen)} \(\rightarrow\) ``élever''\strut
+\end{minipage} & \begin{minipage}[t]{0.46\columnwidth}\centering
+\emph{to raise stg} \(\rightarrow\) ``lever qqch''\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.48\columnwidth}\centering
+\emph{to lie (lay lain)} \(\rightarrow\) ``se situer''\strut
+\end{minipage} & \begin{minipage}[t]{0.46\columnwidth}\centering
+\emph{to lay stg} \(\rightarrow\) ``poser qqch''\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+Notez aussi que les deux intransitifs, ``\emph{rise}'' et ``\emph{lie}'', se prononcent avec /NA eI aI NA/ comme
+dans ``\emph{high}''.
+
+Les deux transitifs se prononcent eux avec /NA i: aI NA/, comme dans ``\emph{say}''.
+
+\hypertarget{les-adverbes}{%
+\section{Les adverbes}\label{les-adverbes}}
+
+Les adverbes fonctionnent comme en français : ils qualifient généralement un verbe et son complément de la même manière qu'un adjectif qualifie un nom.
+
+Attention à l'emplacement des adverbes dits ``de fréquence'', qui s'insèrent souvent entre le sujet et le verbe conjugué :
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{He \textbf{often} speaks to himself} \(\rightarrow\) Il se parle souvent à lui-même.
+\end{itemize}
+
+\hypertarget{les-pruxe9positions}{%
+\section{Les prépositions}\label{les-pruxe9positions}}
+
+(W.I.P.)
+
+\hypertarget{vocabulaire}{%
+\section{Vocabulaire}\label{vocabulaire}}
+
+\hypertarget{dnmade1ang2}{%
+\subsection{DNMADE1ANG2}\label{dnmade1ang2}}
+
+\begin{verbatim}
+## Warning in styling_latex_scale_down(out, table_info): Longtable cannot be
+## resized.
+\end{verbatim}
+
+\begin{longtable}{ll}
+\toprule
+Français &  English\\
+\midrule
+\rowcolor{gray!6}  embêtant & annoying\\
+
+moins connu & lesser-known\\
+
+\rowcolor{gray!6}  remplir & to fulfil\\
+
+un gardien (immeuble) & a caretaker\\
+
+\rowcolor{gray!6}  intelligent & smarter\\
+
+un ennemi & a foe\\
+
+\rowcolor{gray!6}  un effect domino & a knock-on effect\\
+
+la perte & the loss\\
+
+\rowcolor{gray!6}  nourrir & to feed\\
+
+une augmentation & a rise\\
+
+\rowcolor{gray!6}  une menace & a threat\\
+
+câlin, en peluche & cuddly\\
+
+\rowcolor{gray!6}  une sensation de piqûre & stinging\\
+
+injuste & unfair\\
+
+\rowcolor{gray!6}  une espèce & a species\\
+
+un gros problème (expression) & a big deal\\
+
+\rowcolor{gray!6}  qui n'attire pas, qui repousse & off-putting\\
+
+une caractéristique & a feature\\
+
+\rowcolor{gray!6}  les affres & the throes\\
+
+sans emploi & jobless\\
+
+\rowcolor{gray!6}  sans & without\\
+
+voleter, battre des ailes & to flap\\
+
+\rowcolor{gray!6}  étonnant & amazing\\
+
+une ondulation & a ripple\\
+
+\rowcolor{gray!6}  une mare & a pond\\
+
+un galet & a pebble\\
+
+\rowcolor{gray!6}  être témoin de qqch & to witness stg\\
+
+une télécommande & a remote\\
+
+\rowcolor{gray!6}  un cadran & a dial\\
+
+la santé & health (U)\\
+
+\rowcolor{gray!6}  la croissance & growth (U)\\
+
+être engagé & to be committed to stg\\
+
+\rowcolor{gray!6}  espace de sauvegarde & storage\\
+
+fondre & to melt\\
+
+\rowcolor{gray!6}  percer un trou & to drill a hole\\
+
+auxiliaire du conditionnel & would\\
+
+\rowcolor{gray!6}  brancher qqch & to plug in stg\\
+
+un tuyau & a pipe\\
+
+\rowcolor{gray!6}  tordre qqch & to bend\\
+
+digne de qqch & worthy of stg\\
+
+\rowcolor{gray!6}  vérité & truth\\
+
+désaccord & disagreement\\
+
+\rowcolor{gray!6}  authentique & genuine\\
+
+dévoiler, découvrir & uncover\\
+
+\rowcolor{gray!6}  se disputer & argue\\
+
+alléchant & tantalizing\\
+
+\rowcolor{gray!6}  de façon non surprenante & unsurprisingly\\
+
+quelque peu & somewhat\\
+
+\rowcolor{gray!6}  bénéficier de & benefit from\\
+
+simple, facile & straightforward\\
+
+\rowcolor{gray!6}  désobéissance civique & civil disobedience\\
+
+libre échange & free trade\\
+
+\rowcolor{gray!6}  en faveur de & in favour of\\
+
+contre & against\\
+
+\rowcolor{gray!6}  un paquet, un ensemble & bundle\\
+
+défier, remettre en cause & challenge\\
+
+\rowcolor{gray!6}  avoir honte de qqch & ashamed of stg\\
+
+obtenir (les droits) & to secure\\
+
+\rowcolor{gray!6}  une entreprise & a company\\
+
+un but & purpose\\
+
+\rowcolor{gray!6}  contre-attaquer & to fight back\\
+
+disponible & available\\
+
+\rowcolor{gray!6}  interdit & banned\\
+
+enquêter & to investigate\\
+
+\rowcolor{gray!6}  moins cher & cheaper\\
+
+constructeurs automobiles & automobile manufacturers\\
+
+\rowcolor{gray!6}  le simple fait & the mere fact\\
+
+enfreindre les règles & to break the rules\\
+
+\rowcolor{gray!6}  une légende (image) & a caption\\
+\bottomrule
+\end{longtable}
+
+\hypertarget{dn2}{%
+\subsection{DN2}\label{dn2}}
+
+\begin{verbatim}
+## Warning in styling_latex_scale_down(out, table_info): Longtable cannot be
+## resized.
+\end{verbatim}
+
+\begin{longtable}{ll}
+\toprule
+Anglais &  Français\\
+\midrule
+\rowcolor{gray!6}  to take place & avoir lieu\\
+
+in the foreground & au premier plan\\
+
+\rowcolor{gray!6}  to drown & se noyer\\
+
+to be 1m wide & faire 1m de large\\
+
+\rowcolor{gray!6}  to be 1m deep & faire 1m de profondeur\\
+
+to be 1m high & faire 1m de haut\\
+
+\rowcolor{gray!6}  to be 1m long & faire 1m de long\\
+
+to convey a message & véhiculer un message\\
+
+\rowcolor{gray!6}  a shade & une nuance (couleur)\\
+
+an oil-on-canvas & une huile sur toile\\
+
+\rowcolor{gray!6}  it looks as if & on dirait que\\
+
+a storm & une tempête\\
+
+\rowcolor{gray!6}  bottom-left & en bas à gauche\\
+
+top-right & en haut à droite\\
+
+\rowcolor{gray!6}  to make out stg & distinguer qqch\\
+
+a sunset & un coucher de soleil\\
+\bottomrule
+\end{longtable}
+
+\hypertarget{erpc}{%
+\subsection{ERPC}\label{erpc}}
+
+\begin{verbatim}
+## Warning in styling_latex_scale_down(out, table_info): Longtable cannot be
+## resized.
+\end{verbatim}
+
+\begin{longtable}{ll}
+\toprule
+Français &  English\\
+\midrule
+\rowcolor{gray!6}  s'intéresser à qqch & to be interested in stg\\
+
+être bon dans qqch & to be good  at stg\\
+
+\rowcolor{gray!6}  aimer faire qqch & to like doing stg\\
+
+bien aimer faire qqch & to enjoy doing stg\\
+
+\rowcolor{gray!6}  dépenser (ou passer du temps) & to spend\\
+
+choisir & to choose\\
+
+\rowcolor{gray!6}  paresseux & lazy\\
+
+bavard & chatty\\
+
+\rowcolor{gray!6}  tard/en retard & late\\
+
+travailleur & hard-working\\
+
+\rowcolor{gray!6}  ouvert d'esprit & open-minded\\
+
+attentionné & caring\\
+
+\rowcolor{gray!6}  un stage & an internship\\
+
+une entreprise & a company\\
+
+\rowcolor{gray!6}  un pli & a fold\\
+
+un massicot & a trimmer\\
+
+\rowcolor{gray!6}  un logiciel & a software\\
+
+un écran (m...) & a monitor\\
+
+\rowcolor{gray!6}  un écran (d...) & a display\\
+
+relier un livre & to bind a book\\
+
+\rowcolor{gray!6}  la couverture & the cover\\
+
+piqûre à cheval & saddle-stitching\\
+
+\rowcolor{gray!6}  dos carré-collé & perfect-binding\\
+
+reliure spirales & coil binding\\
+
+\rowcolor{gray!6}  expédier qqch & to ship out stg\\
+
+un entrepôt & a warehouse\\
+
+\rowcolor{gray!6}  une nuance de couleur & a hue\\
+
+délavé & washed out\\
+
+\rowcolor{gray!6}  vif (couleur) & bright\\
+
+mat & matte\\
+
+\rowcolor{gray!6}  brillant & glossy\\
+
+un revêtement & a coating\\
+
+\rowcolor{gray!6}  une couche & a layer\\
+
+mélanger & to mix\\
+
+\rowcolor{gray!6}  une forme & a shape\\
+
+un volume & a form\\
+
+\rowcolor{gray!6}  ajouter & to add\\
+
+un équilibre & a balance\\
+
+\rowcolor{gray!6}  commander qqch & to order stg\\
+
+enfance & childhood\\
+
+\rowcolor{gray!6}  un bâtonnet (yeux) & a rod\\
+
+une cellule & a cell\\
+
+\rowcolor{gray!6}  fabriquer qqch & to manufacture stg\\
+
+une usine & a factory\\
+
+\rowcolor{gray!6}  écorce & bark (U)\\
+
+glaçage & glazing\\
+
+\rowcolor{gray!6}  un bobine & a reel\\
+
+l'amidon & starch (U)\\
+
+\rowcolor{gray!6}  blanchir & to bleach\\
+
+un client & a customer\\
+
+\rowcolor{gray!6}  se débarrasser de qqch & to get rid of stg\\
+
+carton & cardboard (U)\\
+
+\rowcolor{gray!6}  une lame & a blade\\
+
+de la colle & glue (U)\\
+
+\rowcolor{gray!6}  ondulé & wavy\\
+
+ondulé (carton) & corrugated\\
+
+\rowcolor{gray!6}  largeur & width\\
+
+longueur & length\\
+
+\rowcolor{gray!6}  profondeur & depth\\
+
+hauteur & height\\
+
+\rowcolor{gray!6}  un plateau & a tray\\
+
+une rainure & a scoring line\\
+
+\rowcolor{gray!6}  de la cire & wax (U)\\
+
+la rogne & cut-offs\\
+
+\rowcolor{gray!6}  un rabat & a flap\\
+
+empiler & to stack\\
+
+\rowcolor{gray!6}  épaisseur & thickness\\
+
+une fente & a slit\\
+
+\rowcolor{gray!6}  une encoche & a notch\\
+
+rugueux & rough\\
+
+\rowcolor{gray!6}  un pli-fenêtre & a gate-fold\\
+
+un nuancier & a fan deck\\
+
+\rowcolor{gray!6}  le dos d'un livre & the spine\\
+
+bien s'adapter & to fit\\
+
+\rowcolor{gray!6}  une poignée & a handle\\
+
+un rouleau & a roller\\
+
+\rowcolor{gray!6}  une police (de caractères) & a font\\
+
+un trait & a stroke\\
+
+\rowcolor{gray!6}  obsolète & outdated\\
+
+un autocollant & a sticker\\
+
+\rowcolor{gray!6}  avoir peur de qqch & to be afraid of stg\\
+
+la graisse (typographie) & the weight\\
+
+\rowcolor{gray!6}  d'apparence professionnelle & professional-looking\\
+
+permettre à qn de faire qqch & to enable sb to do stg\\
+
+\rowcolor{gray!6}  remarquer & to notice\\
+
+réparer & to fix\\
+
+\rowcolor{gray!6}  un niveau & a level\\
+
+bien conçu & well-designed\\
+
+\rowcolor{gray!6}  un devis & a quote\\
+
+un pli roulé (UK) & a roll fold\\
+
+\rowcolor{gray!6}  un pli roulé (US) & a tri/letter fold\\
+
+une livraison & a delivery\\
+
+\rowcolor{gray!6}  pelliculage & lamination\\
+
+un dépliant & a folded leaflet\\
+
+\rowcolor{gray!6}  vernis sélectif & spot varnish\\
+
+dorure à chaud & hot foil stamping\\
+
+\rowcolor{gray!6}  enlever & to remove\\
+
+précédent & previous\\
+
+\rowcolor{gray!6}  suivant & next\\
+\bottomrule
+\end{longtable}
+
+\end{document}
