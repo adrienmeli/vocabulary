@@ -20,3 +20,28 @@ output file: index.knit.md
 
 
 Output created: index.html
+
+
+processing file: index.Rmd
+Parsed with column specification:
+cols(
+  Français = col_character(),
+  ` English` = col_character()
+)
+Parsed with column specification:
+cols(
+  Anglais = col_character(),
+  ` Français` = col_character()
+)
+Parsed with column specification:
+cols(
+  Français = col_character(),
+  ` English` = col_character()
+)
+output file: index.knit.md
+
+! Undefined control sequence.
+<recently read> \rowcolor 
+
+Error: LaTeX failed to compile index.tex. See https://yihui.org/tinytex/r/#debugging for debugging tips. See index.log for more info.
+Execution halted
