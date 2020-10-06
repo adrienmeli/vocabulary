@@ -99,13 +99,13 @@ Les mots suivants ont un <-s> au singulier :
 * *a means* ("un moyen")
 * *a species* ("une espèce")
  
-Attention aussi à `r colorize("*the news*", "red")` ("les nouvelles"), qui est **toujours singulier**.
+Attention aussi à `r colorize("*the news*", "#f44336")` ("les nouvelles"), qui est **toujours singulier**.
 
 ### Pluriels sans <-s>
 
 Inversement, il existe des noms qui peuvent ou doivent se conjuguer au pluriel :
 
-* `r colorize("*the police*", "red")`  est **toujours pluriel**.
+* `r colorize("*the police*", "#f44336")`  est **toujours pluriel**.
 * *staff*, *team* ou *family* peuvent se conjuguer au pluriel.
 
 # Les adjectifs
@@ -204,11 +204,11 @@ Attention à l'emplacement des adverbes dits "de fréquence", qui s'insèrent so
 # Vocabulaire {.tabset .tabset-fade .tabset-pills}
 
 
-## DNMADE1ANG2
+## DN1
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df1 <- read_delim("/home/adrien/databases/dn1a2-vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df1 <- read_delim("/home/adrien/Teaching/estienne/dn1/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
 
 if (knitr::is_latex_output()) {
   knitr::kable(df1, "latex", booktabs = T, longtable = T) %>%
@@ -227,7 +227,7 @@ if (knitr::is_latex_output()) {
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df2 <- read_delim("/home/adrien/databases/dn2-vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df2 <- read_delim("/home/adrien/Teaching/estienne/dn2/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
 
 if (knitr::is_latex_output()) {
   knitr::kable(df2, "latex", booktabs = T, longtable = T) %>%
@@ -243,12 +243,12 @@ if (knitr::is_latex_output()) {
 
 ```
 
-## ERPC
 
+## DN3
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df3 <- read_delim("/home/adrien/databases/erpc-vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df3 <- read_delim("/home/adrien/Teaching/estienne/dn3/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
 
 if (knitr::is_latex_output()) {
   knitr::kable(df3, "latex", booktabs = T, longtable = T) %>%
@@ -264,3 +264,44 @@ if (knitr::is_latex_output()) {
 
 ```
 
+## ERPC 1ère année
+
+
+```{r, echo=FALSE, results='asis', message = FALSE }
+
+df4 <- read_delim("/home/adrien/Teaching/estienne/bts1/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+
+if (knitr::is_latex_output()) {
+  knitr::kable(df4, "latex", booktabs = T, longtable = T) %>%
+    collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
+    kable_styling(latex_options = c("scale_down","striped"),position = "center")
+
+} else if (knitr::is_html_output()) {
+  knitr::kable(df4,  captions=NULL) %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+    collapse_rows(columns = 1:2, valign = "top")
+
+} 
+
+```
+
+## ERPC 2ème année
+
+
+```{r, echo=FALSE, results='asis', message = FALSE }
+
+df5 <- read_delim("/home/adrien/Teaching/estienne/bts2/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+
+if (knitr::is_latex_output()) {
+  knitr::kable(df5, "latex", booktabs = T, longtable = T) %>%
+    collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
+    kable_styling(latex_options = c("scale_down","striped"),position = "center")
+
+} else if (knitr::is_html_output()) {
+  knitr::kable(df5,  captions=NULL) %>%
+    kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+    collapse_rows(columns = 1:2, valign = "top")
+
+} 
+
+```

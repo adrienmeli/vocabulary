@@ -78,11 +78,25 @@
 \usepackage[utf8]{inputenc}
 \usepackage[light,sfdefault]{roboto}
 \usepackage{titlesec}
+\usepackage{multicol}
 %\usepackage{tufte-book}
 %\usepackage{fourier}
 %\usepackage{montserrat}
 %\usepackage[T1]{fontenc}
 %\usepackage[french]{babel}
+
+%----------------------------------------------------------------------------------------
+%	DEFINE COLOURS
+%----------------------------------------------------------------------------------------
+%\definecolor{darkPrimaryColor}{HTML}{303F9F}
+\definecolor{darkPrimaryColor}{HTML}{2c5272}
+\definecolor{primaryColor}{HTML}{3F51B5}
+\definecolor{lightPrimaryColor}{HTML}{C5CAE9}
+\definecolor{textPrimaryColor}{HTML}{FFFFFF}
+\definecolor{accentColor}{HTML}{FF5252}
+\definecolor{primaryTextColor}{HTML}{212121}
+\definecolor{secondaryTextColor}{HTML}{757575}
+\definecolor{dividerColor}{HTML}{BDBDBD}
 
 % -----------------------------------------------------------------
 % Hyper Setup
@@ -146,9 +160,92 @@
   {\normalfont\LARGE\bfseries\filcenter}{}{1ex}
   {\vspace{2ex}}[\vspace{1ex}]
 
+%----------------------------------------------------------------------------------------
+%	MODIFY SECTION STYLES
+%----------------------------------------------------------------------------------------
+
+%\usepackage{titlesec} % Required for modifying sections
+%
+%%------------------------------------------------
+%% Section
+%
+%\titleformat
+%   {\section} % Section type being modified
+%   [block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+%   {\centering\bfseries\color{darkPrimaryColor}} % Format of the whole section
+%   {} % Format of the section label
+%   {0pt} % Space between the title and label
+%   %{\titlerule\newline{\thetitle. }} % Code before the label
+%   {\titlerule\newline} % Code before the label
+%   [\titlerule]% after code
+%
+%\titlespacing{\section}
+%   {0pt} % left
+%   {\baselineskip} % before title
+%   {\baselineskip} % Spacing around section titles, the order is: left, before and after
+%
+%%------------------------------------------------
+%% Subsection
+%
+%\titleformat
+%   {\subsection}
+%   [block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+%   {\itshape \color{accentColor}\bfseries}% format
+%   %{\thesubsection.}% label
+%   {}% label
+%   {6pt}% sep btw label and title
+%   {}% before code
+%   []% after code
+% 
+%\titlespacing{\subsection}
+%   {6pt}% left
+%   {\baselineskip} % before title
+%   {\baselineskip} % Spacing around section titles, the order is: left, before and after
+%
+%%------------------------------------------------
+%% Subsubsection
+%
+%\titleformat
+%   {\subsubsection}
+%   [block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+%   {\ttfamily \bfseries \itshape }% format
+%   {\thesubsubsection}% label
+%   {4pt}% sep btw label and title
+%   {}% before code
+%   []% after code
+% 
+%\titlespacing{\subsubsection}
+%   {12pt}% left
+%   {\baselineskip} % before title
+%   {\baselineskip}% after sep
+%
+%%\renewcommand\thesubsection{(\alph{subsection})}
+%
+%% from bookdown to create column environments
+%\newenvironment{columns}[1][]{}{}
+%
+%\newenvironment{column}[1]{\begin{minipage}{#1}\ignorespaces}{%
+%\end{minipage}
+%\ifhmode\unskip\fi
+%\aftergroup\useignorespacesandallpars}
+%
+%\def\useignorespacesandallpars#1\ignorespaces\fi{%
+%#1\fi\ignorespacesandallpars}
+%
+%\makeatletter
+%\def\ignorespacesandallpars{%
+%  \@ifnextchar\par
+%    {\expandafter\ignorespacesandallpars\@gobble}%
+%    {}%
+%}
+%\makeatother
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
 \title{Le vocabulaire}
 \author{Adrien Méli}
-\date{June 04, 2020}
+\date{October 06, 2020}
 
 \begin{document}
 \maketitle
@@ -229,7 +326,7 @@ Les mots suivants ont un \textless-s\textgreater{} au singulier :
   \emph{a species} (``une espèce'')
 \end{itemize}
 
-Attention aussi à \textcolor{red}{*the news*} (``les nouvelles''), qui est \textbf{toujours singulier}.
+Attention aussi à \color[HTML]{red}\emph{the news} \color{black} (``les nouvelles''), qui est \textbf{toujours singulier}.
 
 \hypertarget{pluriels-sans--s}{%
 \subsubsection{Pluriels sans \textless-s\textgreater{}}\label{pluriels-sans--s}}
@@ -239,7 +336,7 @@ Inversement, il existe des noms qui peuvent ou doivent se conjuguer au pluriel :
 \begin{itemize}
 \tightlist
 \item
-  \textcolor{red}{*the police*} est \textbf{toujours pluriel}.
+  \color[HTML]{red}\emph{the police} \color{black} est \textbf{toujours pluriel}.
 \item
   \emph{staff}, \emph{team} ou \emph{family} peuvent se conjuguer au pluriel.
 \end{itemize}
@@ -373,10 +470,10 @@ Ne confondez plus :
 \bottomrule
 \end{longtable}
 
-Notez aussi que les deux intransitifs, ``\emph{rise}'' et ``\emph{lie}'', se prononcent avec /NA eI aI NA/ comme
+Notez aussi que les deux intransitifs, ``\emph{rise}'' et ``\emph{lie}'', se prononcent avec / /\textipa{eI}/ /\textipa{aI}/ / comme
 dans ``\emph{high}''.
 
-Les deux transitifs se prononcent eux avec /NA i: aI NA/, comme dans ``\emph{say}''.
+Les deux transitifs se prononcent eux avec / /\textipa{i:}/ /\textipa{aI}/ /, comme dans ``\emph{say}''.
 
 \hypertarget{les-adverbes}{%
 \section{Les adverbes}\label{les-adverbes}}
@@ -399,8 +496,8 @@ Attention à l'emplacement des adverbes dits ``de fréquence'', qui s'insèrent 
 \hypertarget{vocabulaire}{%
 \section{Vocabulaire}\label{vocabulaire}}
 
-\hypertarget{dnmade1ang2}{%
-\subsection{DNMADE1ANG2}\label{dnmade1ang2}}
+\hypertarget{dn1}{%
+\subsection{DN1}\label{dn1}}
 
 \begin{verbatim}
 ## Warning in styling_latex_scale_down(out, table_info): Longtable cannot be
@@ -409,233 +506,85 @@ Attention à l'emplacement des adverbes dits ``de fréquence'', qui s'insèrent 
 
 \begin{longtable}{ll}
 \toprule
-Français &  English\\
+15 sur 20 & 15 out of 20\\
 \midrule
-\rowcolor{gray!6}  embêtant & annoying\\
+\cellcolor{gray!6}{adhérer à qqch} & \cellcolor{gray!6}{to subscribe to stg}\\
 
-moins connu & lesser-known\\
+alors que & whereas\\
 
-\rowcolor{gray!6}  remplir & to fulfil\\
+\cellcolor{gray!6}{appartenir à} & \cellcolor{gray!6}{to belong to}\\
 
-un gardien (immeuble) & a caretaker\\
+approvisionner, fournir & to supply\\
 
-\rowcolor{gray!6}  intelligent & smarter\\
+\cellcolor{gray!6}{attendre de qn qu'il fasse qqch} & \cellcolor{gray!6}{to expect sb to do stg}\\
 
-un ennemi & a foe\\
+bien que & although\\
 
-\rowcolor{gray!6}  un effect domino & a knock-on effect\\
+\cellcolor{gray!6}{capacité d'attention} & \cellcolor{gray!6}{attention span}\\
 
-la perte & the loss\\
+cautionner & to endorse\\
 
-\rowcolor{gray!6}  nourrir & to feed\\
+\cellcolor{gray!6}{concret} & \cellcolor{gray!6}{hands-on}\\
 
-une augmentation & a rise\\
+de la boue & mud\\
 
-\rowcolor{gray!6}  une menace & a threat\\
+\cellcolor{gray!6}{des aiguilles à tricoter} & \cellcolor{gray!6}{knitting needles}\\
 
-câlin, en peluche & cuddly\\
+écouter qqch & to listen to stg\\
 
-\rowcolor{gray!6}  une sensation de piqûre & stinging\\
+\cellcolor{gray!6}{expliciter, détailler} & \cellcolor{gray!6}{to spell out}\\
 
-injuste & unfair\\
+fonder & to found\\
 
-\rowcolor{gray!6}  une espèce & a \vphantom{1} species\\
+\cellcolor{gray!6}{froncer les sourcils, désapprouver qqch} & \cellcolor{gray!6}{to frown (on stg)}\\
 
+grandir & to grow up\\
 
-un gros problème (expression) & a big deal\\
+\cellcolor{gray!6}{interdire (b...)} & \cellcolor{gray!6}{to ban}\\
 
-\rowcolor{gray!6}  qui n'attire pas, qui repousse & off-putting\\
+interdire (f...) & to forbid\\
 
-une caractéristique & a feature\\
+\cellcolor{gray!6}{interdire (p...)} & \cellcolor{gray!6}{to prohibit}\\
 
-\rowcolor{gray!6}  les affres & the throes\\
+le siège d'une entreprise & the headquarters\\
 
-sans emploi & jobless\\
+\cellcolor{gray!6}{mais, pourtant} & \cellcolor{gray!6}{yet}\\
 
-\rowcolor{gray!6}  sans & without\\
+même si (concession) & even though\\
 
-voleter, battre des ailes & to flap\\
+\cellcolor{gray!6}{mettre en oeuvre} & \cellcolor{gray!6}{to implement}\\
 
-\rowcolor{gray!6}  étonnant & amazing\\
+pendant que & while\\
 
-une ondulation & a ripple\\
+\cellcolor{gray!6}{réclamer, exiger} & \cellcolor{gray!6}{to call for}\\
 
-\rowcolor{gray!6}  une mare & a pond\\
+s'avérer & to turn out\\
 
-un galet & a pebble\\
+\cellcolor{gray!6}{se concentrer sur qqch} & \cellcolor{gray!6}{to focus on stg}\\
 
-\rowcolor{gray!6}  être témoin de qqch & to witness stg\\
+s'empresser de & to rush to do stg\\
 
-une télécommande & a remote\\
+\cellcolor{gray!6}{stable} & \cellcolor{gray!6}{steady}\\
 
-\rowcolor{gray!6}  un cadran & a dial\\
+une politique, une mesure & a policy\\
 
-la santé & health (U)\\
+\cellcolor{gray!6}{un intrus} & \cellcolor{gray!6}{an odd-one-out}\\
 
-\rowcolor{gray!6}  la croissance & growth (U)\\
+un noyau & a core\\
 
-être engagé & to be committed to stg\\
+\cellcolor{gray!6}{un ordinateur de bureau} & \cellcolor{gray!6}{a desktop}\\
 
-\rowcolor{gray!6}  espace de sauvegarde & storage\\
+un ordinateur portable & a laptop\\
 
-fondre & to melt\\
+\cellcolor{gray!6}{un outil} & \cellcolor{gray!6}{a tool}\\
 
-\rowcolor{gray!6}  percer un trou & to drill a hole\\
+un pilier & a pillar\\
 
-auxiliaire du conditionnel & would\\
+\cellcolor{gray!6}{un portail} & \cellcolor{gray!6}{a gate}\\
 
-\rowcolor{gray!6}  brancher qqch & to plug in stg\\
+un résumé & a summary\\
 
-un tuyau & a pipe\\
-
-\rowcolor{gray!6}  tordre qqch & to bend\\
-
-digne de qqch & worthy of stg\\
-
-\rowcolor{gray!6}  vérité & truth\\
-
-désaccord & disagreement\\
-
-\rowcolor{gray!6}  authentique & genuine\\
-
-dévoiler, découvrir & uncover\\
-
-\rowcolor{gray!6}  se disputer & argue\\
-
-alléchant & tantalizing\\
-
-\rowcolor{gray!6}  de façon non surprenante & unsurprisingly\\
-
-quelque peu & somewhat\\
-
-\rowcolor{gray!6}  bénéficier de & benefit from\\
-
-simple, facile & straightforward\\
-
-\rowcolor{gray!6}  désobéissance civique & civil disobedience\\
-
-libre échange & free trade\\
-
-\rowcolor{gray!6}  en faveur de & in favour of\\
-
-contre & against\\
-
-\rowcolor{gray!6}  un paquet, un ensemble & bundle\\
-
-défier, remettre en cause & challenge\\
-
-\rowcolor{gray!6}  avoir honte de qqch & ashamed of stg\\
-
-obtenir (les droits) & to secure\\
-
-\rowcolor{gray!6}  une entreprise & a \vphantom{1} company\\
-
-
-un but & purpose\\
-
-\rowcolor{gray!6}  contre-attaquer & to fight back\\
-
-disponible & available\\
-
-\rowcolor{gray!6}  interdit & banned\\
-
-enquêter & to investigate\\
-
-\rowcolor{gray!6}  moins cher & cheaper\\
-
-constructeurs automobiles & automobile manufacturers\\
-
-\rowcolor{gray!6}  le simple fait & the mere fact\\
-
-enfreindre les règles & to break the rules\\
-
-\rowcolor{gray!6}  une légende (image) & a caption\\
-
-endurer, traverser & to go through\\
-
-\rowcolor{gray!6}  s'effondrer & to collapse\\
-
-une entreprise & a company\\
-\rowcolor{gray!6}  une dépression & a nervous breakdown\\
-
-une espèce & a species\\
-\rowcolor{gray!6}  mortel & deadly\\
-
-un noyau (planète) & a core\\
-
-\rowcolor{gray!6}  chômage & unemployment\\
-
-un taux & a rate\\
-
-\rowcolor{gray!6}  chasser & to hunt\\
-
-une attente & an expectation\\
-
-\rowcolor{gray!6}  un dé & a dice\\
-
-les deux & both\\
-
-\rowcolor{gray!6}  un jeu de mots & a pun, a play-on-words\\
-
-véhiculer un message & to convey a message\\
-
-\rowcolor{gray!6}  2 sur 4 & 2 out of 4\\
-
-flou & blurry\\
-
-\rowcolor{gray!6}  prévenir, avertir & to warn against\\
-
-transformer en & to turn into\\
-
-\rowcolor{gray!6}  l'arrière-plan & the background\\
-
-dépasser (ici) & to push through\\
-
-\rowcolor{gray!6}  à l'aise & at ease\\
-
-être déprimé & to feel down\\
-
-\rowcolor{gray!6}  quelqu'un vous manque & to miss somebody\\
-
-morose & gloomy\\
-
-\rowcolor{gray!6}  sensible & sensitive\\
-
-lutter & to struggle\\
-
-\rowcolor{gray!6}  incroyable & incredible\\
-
-une foule & a crowd\\
-
-\rowcolor{gray!6}  un paysage & a landscape\\
-
-une lentille (photo) & a lens\\
-
-\rowcolor{gray!6}  le confinement & the lockdown\\
-
-une marque & a brand\\
-
-\rowcolor{gray!6}  une forme & a shape\\
-
-esquisser & to sketch\\
-
-\rowcolor{gray!6}  mouler & to mold\\
-
-une sieste & a nap\\
-
-\rowcolor{gray!6}  une frontière & a boundary\\
-
-lourd & heavy\\
-
-\rowcolor{gray!6}  une chemise & a shirt\\
-
-un ver & a worm\\
-
-\rowcolor{gray!6}  aveugle & blind\\
-
-au-dessus de & above\\
-
-\rowcolor{gray!6}  farine & flour\\
+\cellcolor{gray!6}{un sondage} & \cellcolor{gray!6}{a poll}\\
 \bottomrule
 \end{longtable}
 
@@ -649,44 +598,116 @@ au-dessus de & above\\
 
 \begin{longtable}{ll}
 \toprule
-Anglais &  Français\\
+aborder (un sujet) & to tackle\\
 \midrule
-\rowcolor{gray!6}  to take place & avoir lieu\\
+\cellcolor{gray!6}{à haute criminalité} & \cellcolor{gray!6}{crime-ridden}\\
 
-in the foreground & au premier plan\\
+attendre de qn que... & to expect sb to\\
 
-\rowcolor{gray!6}  to drown & se noyer\\
+\cellcolor{gray!6}{biaisé, partial} & \cellcolor{gray!6}{biassed}\\
 
-to be 1m wide & faire 1m de large\\
+chaos & mayhem\\
 
-\rowcolor{gray!6}  to be 1m deep & faire 1m de profondeur\\
+\cellcolor{gray!6}{comestible} & \cellcolor{gray!6}{edible}\\
 
-to be 1m high & faire 1m de haut\\
+destinataire, récipiendaire & a recipient\\
 
-\rowcolor{gray!6}  to be 1m long & faire 1m de long\\
+\cellcolor{gray!6}{diffuser} & \cellcolor{gray!6}{to broadcast}\\
 
-to convey a message & véhiculer un message\\
+disposer, agencer & to lay out\\
 
-\rowcolor{gray!6}  a shade & une nuance (couleur)\\
+\cellcolor{gray!6}{durer} & \cellcolor{gray!6}{to last}\\
 
-an oil-on-canvas & une huile sur toile\\
+échapper à & to elude\\
 
-\rowcolor{gray!6}  it looks as if & on dirait que\\
+\cellcolor{gray!6}{esquisser} & \cellcolor{gray!6}{to sketch}\\
 
-a storm & une tempête\\
+être susceptible de & to be likely to\\
 
-\rowcolor{gray!6}  bottom-left & en bas à gauche\\
+\cellcolor{gray!6}{évident} & \cellcolor{gray!6}{obvious}\\
 
-top-right & en haut à droite\\
+exact, précis & accurate\\
 
-\rowcolor{gray!6}  to make out stg & distinguer qqch\\
+\cellcolor{gray!6}{fournir (p...)} & \cellcolor{gray!6}{to provide sb with}\\
 
-a sunset & un coucher de soleil\\
+fournir (s...) & to supply sb with\\
+
+\cellcolor{gray!6}{incliner} & \cellcolor{gray!6}{to tilt}\\
+
+intenter un procès & to sue\\
+
+\cellcolor{gray!6}{interdire} & \cellcolor{gray!6}{to ban}\\
+
+la majorité écrasante & the overwhelming majority\\
+
+\cellcolor{gray!6}{le confinement} & \cellcolor{gray!6}{the lockdown}\\
+
+menacer & to threaten\\
+
+\cellcolor{gray!6}{pendant que} & \cellcolor{gray!6}{while}\\
+
+posséder qqch & to own stg\\
+
+\cellcolor{gray!6}{postuler à qqch} & \cellcolor{gray!6}{to apply for stg}\\
+
+promouvoir (a...) & to advertise\\
+
+\cellcolor{gray!6}{promouvoir (p...)} & \cellcolor{gray!6}{to promote}\\
+
+provenir de & to stem from\\
+
+\cellcolor{gray!6}{résoudre} & \cellcolor{gray!6}{to work out}\\
+
+s'accroupir & to croush\\
+
+\cellcolor{gray!6}{selon, d'après} & \cellcolor{gray!6}{according to}\\
+
+(se) terminer & to be over\\
+
+\cellcolor{gray!6}{sonder} & \cellcolor{gray!6}{to probe}\\
+
+un but, un objectif (a...) & an aim\\
+
+\cellcolor{gray!6}{un but, un objectif (p...)} & \cellcolor{gray!6}{a purpose}\\
+
+un écart (d...) & a discrepancy\\
+
+\cellcolor{gray!6}{un écart (g...)} & \cellcolor{gray!6}{a gap}\\
+
+une légende d'image & a caption\\
+
+\cellcolor{gray!6}{une mission, une tâche} & \cellcolor{gray!6}{an assignment}\\
+
+une pièce de 25 ¢ & a quarter\\
+
+\cellcolor{gray!6}{une pièce de 5 ¢} & \cellcolor{gray!6}{a nickel}\\
+
+une pièce de 10 ¢ & a dime\\
+
+\cellcolor{gray!6}{une tâche de couleur} & \cellcolor{gray!6}{a patch}\\
+
+une vue d'ensemble & an overview\\
+
+\cellcolor{gray!6}{un hommage} & \cellcolor{gray!6}{a tribute}\\
+
+un indice & a clue\\
+
+\cellcolor{gray!6}{un ordinateur de bureau} & \cellcolor{gray!6}{a desktop}\\
+
+un ordinateur portable & a laptop\\
+
+\cellcolor{gray!6}{un rédacteur en chef} & \cellcolor{gray!6}{an editor}\\
+
+un sondage & a poll\\
+
+\cellcolor{gray!6}{un stage} & \cellcolor{gray!6}{an internship}\\
+
+vendre la mèche & to spill the beans\\
 \bottomrule
 \end{longtable}
 
-\hypertarget{erpc}{%
-\subsection{ERPC}\label{erpc}}
+\hypertarget{dn3}{%
+\subsection{DN3}\label{dn3}}
 
 \begin{verbatim}
 ## Warning in styling_latex_scale_down(out, table_info): Longtable cannot be
@@ -695,205 +716,463 @@ a sunset & un coucher de soleil\\
 
 \begin{longtable}{ll}
 \toprule
-Français &  English\\
+aborder un problème & to address an issue\\
 \midrule
-\rowcolor{gray!6}  s'intéresser à qqch & to be interested in stg\\
+\cellcolor{gray!6}{augmenter} & \cellcolor{gray!6}{to increase}\\
 
-être bon dans qqch & to be good  at stg\\
+bien que & although\\
 
-\rowcolor{gray!6}  aimer faire qqch & to like doing stg\\
+\cellcolor{gray!6}{dans quelle mesure} & \cellcolor{gray!6}{to what extent}\\
 
-bien aimer faire qqch & to enjoy doing stg\\
+de plus & furthermore\\
 
-\rowcolor{gray!6}  dépenser (ou passer du temps) & to spend\\
+\cellcolor{gray!6}{dès le départ} & \cellcolor{gray!6}{right off the bat}\\
 
-choisir & to choose\\
+en dépit de & despite\\
 
-\rowcolor{gray!6}  paresseux & lazy\\
+\cellcolor{gray!6}{exécution, mise en œuvre} & \cellcolor{gray!6}{implementation}\\
 
-bavard & chatty\\
+les résultats & the findings\\
 
-\rowcolor{gray!6}  tard/en retard & late\\
+\cellcolor{gray!6}{mettre à nu} & \cellcolor{gray!6}{to lay bare}\\
 
-travailleur & hard-working\\
+pertinent & relevant\\
 
-\rowcolor{gray!6}  ouvert d'esprit & open-minded\\
+\cellcolor{gray!6}{puisque} & \cellcolor{gray!6}{since}\\
 
-attentionné & caring\\
+se concentrer sur & to focus on\\
 
-\rowcolor{gray!6}  un stage & an internship\\
+\cellcolor{gray!6}{un but (p...)} & \cellcolor{gray!6}{a purpose}\\
 
-une entreprise & a company\\
+un échantillon & a sample\\
 
-\rowcolor{gray!6}  un pli & a fold\\
+\cellcolor{gray!6}{une tendance} & \cellcolor{gray!6}{a trend}\\
 
-un massicot & a trimmer\\
+un moyen de & a means to\\
 
-\rowcolor{gray!6}  un logiciel & a software\\
+\cellcolor{gray!6}{un résultat (o...)} & \cellcolor{gray!6}{an outcome}\\
 
-un écran (m...) & a monitor\\
+un résumé & a summary\\
 
-\rowcolor{gray!6}  un écran (d...) & a display\\
+\cellcolor{gray!6}{viser à, avoir pour but de} & \cellcolor{gray!6}{to aim to}\\
+\bottomrule
+\end{longtable}
 
-relier un livre & to bind a book\\
+\hypertarget{erpc-1uxe8re-annuxe9e}{%
+\subsection{ERPC 1ère année}\label{erpc-1uxe8re-annuxe9e}}
 
-\rowcolor{gray!6}  la couverture & the cover\\
+\begin{verbatim}
+## Warning in styling_latex_scale_down(out, table_info): Longtable cannot be
+## resized.
+\end{verbatim}
 
-piqûre à cheval & saddle-stitching\\
+\begin{longtable}{ll}
+\toprule
+alimenter & to feed (fed, fed)\\
+\midrule
+\cellcolor{gray!6}{à travers quelque chose} & \cellcolor{gray!6}{through}\\
 
-\rowcolor{gray!6}  dos carré-collé & perfect-binding\\
+autocollants & stickers\\
 
-reliure spirales & coil binding\\
+\cellcolor{gray!6}{brochures} & \cellcolor{gray!6}{booklets}\\
 
-\rowcolor{gray!6}  expédier qqch & to ship out stg\\
+bye & au revoir\\
 
-un entrepôt & a warehouse\\
+\cellcolor{gray!6}{cartes de visite} & \cellcolor{gray!6}{business cards}\\
 
-\rowcolor{gray!6}  une nuance de couleur & a hue\\
+charger & to load\\
 
-délavé & washed out\\
+\cellcolor{gray!6}{commencer} & \cellcolor{gray!6}{to begin (began, begun)}\\
 
-\rowcolor{gray!6}  vif (couleur) & bright\\
+de la poudre & powder\\
 
-mat & matte\\
+\cellcolor{gray!6}{de l'encre} & \cellcolor{gray!6}{ink}\\
 
-\rowcolor{gray!6}  brillant & glossy\\
+de l'huile & oil\\
 
-un revêtement & a coating\\
+\cellcolor{gray!6}{dépliants} & \cellcolor{gray!6}{brochures}\\
 
-\rowcolor{gray!6}  une couche & a layer\\
+des agrafes & staples\\
 
-mélanger & to mix\\
+\cellcolor{gray!6}{deux fois} & \cellcolor{gray!6}{twice}\\
 
-\rowcolor{gray!6}  une forme & a shape\\
+dos carré-collé & perfect binding\\
 
-un volume & a form\\
+\cellcolor{gray!6}{équipement, installation} & \cellcolor{gray!6}{facility}\\
 
-\rowcolor{gray!6}  ajouter & to add\\
+étape & a stage\\
 
-un équilibre & a balance\\
+\cellcolor{gray!6}{expédier} & \cellcolor{gray!6}{to ship out}\\
 
-\rowcolor{gray!6}  commander qqch & to order stg\\
+fonctionner & to work\\
 
-enfance & childhood\\
+\cellcolor{gray!6}{glisser} & \cellcolor{gray!6}{to glide}\\
 
-\rowcolor{gray!6}  un bâtonnet (yeux) & a rod\\
+gravé au laser & laser-etched\\
 
-une cellule & a cell\\
+\cellcolor{gray!6}{hello} & \cellcolor{gray!6}{bonjour}\\
 
-\rowcolor{gray!6}  fabriquer qqch & to manufacture stg\\
+humecter, humidifier & to dampen\\
 
-une usine & a factory\\
+\cellcolor{gray!6}{imprimer} & \cellcolor{gray!6}{to print}\\
 
-\rowcolor{gray!6}  écorce & bark (U)\\
+item fonctionner & to work\\
 
-glaçage & glazing\\
+\cellcolor{gray!6}{le dos (d'un livre)} & \cellcolor{gray!6}{the spine}\\
 
-\rowcolor{gray!6}  un bobine & a reel\\
+le grammage & paper weight\\
 
-l'amidon & starch (U)\\
+\cellcolor{gray!6}{le recto} & \cellcolor{gray!6}{the front}\\
 
-\rowcolor{gray!6}  blanchir & to bleach\\
+le verso & the back\\
 
-un client & a customer\\
+\cellcolor{gray!6}{livrer} & \cellcolor{gray!6}{to deliver}\\
 
-\rowcolor{gray!6}  se débarrasser de qqch & to get rid of stg\\
+mieux convenir à & to be best suited for\\
 
-carton & cardboard (U)\\
+\cellcolor{gray!6}{mince, fin} & \cellcolor{gray!6}{thin}\\
 
-\rowcolor{gray!6}  une lame & a blade\\
+pailleté, miroitant & shimmery\\
 
-de la colle & glue (U)\\
+\cellcolor{gray!6}{piqûre à cheval} & \cellcolor{gray!6}{saddle-stitched}\\
 
-\rowcolor{gray!6}  ondulé & wavy\\
+précis, aiguisé & sharp\\
 
-ondulé (carton) & corrugated\\
+\cellcolor{gray!6}{recto-verso} & \cellcolor{gray!6}{both sides}\\
 
-\rowcolor{gray!6}  largeur & width\\
+relier (un livre) & to bind (bound, bound)\\
 
-longueur & length\\
+\cellcolor{gray!6}{reliure à spirale} & \cellcolor{gray!6}{coil binding}\\
 
-\rowcolor{gray!6}  profondeur & depth\\
+résulter dans, aboutir à & to result in\\
 
-hauteur & height\\
+\cellcolor{gray!6}{sans} & \cellcolor{gray!6}{without}\\
 
-\rowcolor{gray!6}  un plateau & a tray\\
+stokage & storage\\
 
-une rainure & a scoring line\\
+\cellcolor{gray!6}{taille} & \cellcolor{gray!6}{size}\\
 
-\rowcolor{gray!6}  de la cire & wax (U)\\
+tomber, chuter & to fall (fell, fallen)\\
 
-la rogne & cut-offs\\
+\cellcolor{gray!6}{trade} & \cellcolor{gray!6}{commerce}\\
 
-\rowcolor{gray!6}  un rabat & a flap\\
+une agence de communication & an ad(vertising) agency\\
 
-empiler & to stack\\
+\cellcolor{gray!6}{une configuration} & \cellcolor{gray!6}{a setup}\\
 
-\rowcolor{gray!6}  épaisseur & thickness\\
+une couche & a layer\\
+
+\cellcolor{gray!6}{une couverture, un blanchet} & \cellcolor{gray!6}{a blanket}\\
+
+une encoche & a notch\\
+
+\cellcolor{gray!6}{une enveloppe} & \cellcolor{gray!6}{a wrap}\\
 
 une fente & a slit\\
 
-\rowcolor{gray!6}  une encoche & a notch\\
+\cellcolor{gray!6}{une finition brillante} & \cellcolor{gray!6}{a glossy finish}\\
 
-rugueux & rough\\
+une finition mate & a matte finish\\
 
-\rowcolor{gray!6}  un pli-fenêtre & a gate-fold\\
+\cellcolor{gray!6}{une fois que} & \cellcolor{gray!6}{once}\\
 
-un nuancier & a fan deck\\
+une plaque & a plate\\
 
-\rowcolor{gray!6}  le dos d'un livre & the spine\\
+\cellcolor{gray!6}{une sous-couche} & \cellcolor{gray!6}{an under-coat}\\
+
+une surface, une tache & a spot\\
+
+\cellcolor{gray!6}{un exemplaire} & \cellcolor{gray!6}{a copy}\\
+
+un fichier numérique & a digital file\\
+
+\cellcolor{gray!6}{un massicot} & \cellcolor{gray!6}{a trimmer}\\
+
+un pli & a fold\\
+
+\cellcolor{gray!6}{un rouleau} & \cellcolor{gray!6}{a roller}\\
+
+un sondage & a poll\\
+
+\cellcolor{gray!6}{un stage} & \cellcolor{gray!6}{an internship}\\
+\bottomrule
+\end{longtable}
+
+\hypertarget{erpc-2uxe8me-annuxe9e}{%
+\subsection{ERPC 2ème année}\label{erpc-2uxe8me-annuxe9e}}
+
+\begin{verbatim}
+## Warning in styling_latex_scale_down(out, table_info): Longtable cannot be
+## resized.
+\end{verbatim}
+
+\begin{longtable}{ll}
+\toprule
+aimer faire qqch\cellcolor{gray!6}{} & \cellcolor{gray!6}{}to like doing stg\\
+\midrule
+\cellcolor{gray!6}{ajouter} & \cellcolor{gray!6}{to add}\\
+
+assister à une réunion & to attend a meeting\\
+
+\cellcolor{gray!6}{attentionné} & \cellcolor{gray!6}{caring}\\
+
+avoir peur de qqch & to be afraid of stg\\
+
+\cellcolor{gray!6}{bavard} & \cellcolor{gray!6}{chatty}\\
+
+bien aimer faire qqch & to enjoy doing stg\\
+
+\cellcolor{gray!6}{bien conçu} & \cellcolor{gray!6}{well-designed}\\
 
 bien s'adapter & to fit\\
 
-\rowcolor{gray!6}  une poignée & a handle\\
+\cellcolor{gray!6}{blanchir} & \cellcolor{gray!6}{to bleach}\\
 
-un rouleau & a roller\\
+brillant & glossy\\
 
-\rowcolor{gray!6}  une police (de caractères) & a font\\
+\cellcolor{gray!6}{carton} & \cellcolor{gray!6}{cardboard (U)}\\
 
-un trait & a stroke\\
+choisir & to choose\\
 
-\rowcolor{gray!6}  obsolète & outdated\\
+\cellcolor{gray!6}{commander qqch} & \cellcolor{gray!6}{to order stg}\\
 
-un autocollant & a sticker\\
+d'apparence professionnelle & professional-looking\\
 
-\rowcolor{gray!6}  avoir peur de qqch & to be afraid of stg\\
+\cellcolor{gray!6}{décrire} & \cellcolor{gray!6}{to describe}\\
 
-la graisse (typographie) & the weight\\
+de la cire & wax (U)\\
 
-\rowcolor{gray!6}  d'apparence professionnelle & professional-looking\\
+\cellcolor{gray!6}{de la colle} & \cellcolor{gray!6}{glue (U)}\\
 
-permettre à qn de faire qqch & to enable sb to do stg\\
+délavé & washed out\\
 
-\rowcolor{gray!6}  remarquer & to notice\\
-
-réparer & to fix\\
-
-\rowcolor{gray!6}  un niveau & a level\\
-
-bien conçu & well-designed\\
-
-\rowcolor{gray!6}  un devis & a quote\\
-
-un pli roulé (UK) & a roll fold\\
-
-\rowcolor{gray!6}  un pli roulé (US) & a tri/letter fold\\
-
-une livraison & a delivery\\
-
-\rowcolor{gray!6}  pelliculage & lamination\\
-
-un dépliant & a folded leaflet\\
-
-\rowcolor{gray!6}  vernis sélectif & spot varnish\\
+\cellcolor{gray!6}{dépenser (ou passer du temps)} & \cellcolor{gray!6}{to spend}\\
 
 dorure à chaud & hot foil stamping\\
 
-\rowcolor{gray!6}  enlever & to remove\\
+\cellcolor{gray!6}{dos carré-collé} & \cellcolor{gray!6}{perfect-binding}\\
 
-précédent & previous\\
+écorce & bark (U)\\
 
-\rowcolor{gray!6}  suivant & next\\
+\cellcolor{gray!6}{empiler} & \cellcolor{gray!6}{to stack}\\
+
+encre & ink\\
+
+\cellcolor{gray!6}{enfance} & \cellcolor{gray!6}{childhood}\\
+
+ \vphantom{7}& \\
+
+\cellcolor{gray!6}{\multirow[t]{-2}{*}{\raggedright\arraybackslash enlever}} & \cellcolor{gray!6}{\multirow[t]{-2}{*}{\raggedright\arraybackslash to remove}}\\
+
+épaisseur & thickness\\
+
+\cellcolor{gray!6}{essayer de faire qqch} & \cellcolor{gray!6}{to try to do stg}\\
+
+être bon dans qqch & to be good  at stg\\
+
+\cellcolor{gray!6}{expédier qqch} & \cellcolor{gray!6}{to ship out stg}\\
+
+fabriquer qqch & to manufacture stg\\
+
+\cellcolor{gray!6}{faire du télétravail} & \cellcolor{gray!6}{to work from home}\\
+
+Français & English\\
+
+\cellcolor{gray!6}{glaçage} & \cellcolor{gray!6}{glazing}\\
+
+hauteur & height\\
+
+\cellcolor{gray!6}{la couverture} & \cellcolor{gray!6}{the cover}\\
+
+la graisse (typographie) & the weight\\
+
+\cellcolor{gray!6}{l'amidon} & \cellcolor{gray!6}{starch (U)}\\
+
+largeur & width\\
+
+\cellcolor{gray!6}{la rogne} & \cellcolor{gray!6}{cut-offs}\\
+
+le dos d'un livre & the spine\\
+
+\cellcolor{gray!6}{longueur} & \cellcolor{gray!6}{length}\\
+
+lycée & high-school\\
+
+\cellcolor{gray!6}{mat} & \cellcolor{gray!6}{matte}\\
+
+ & to blend\\
+
+\cellcolor{gray!6}{\multirow[t]{-2}{*}{\raggedright\arraybackslash mélanger}} & \cellcolor{gray!6}{to mix}\\
+
+obsolète & outdated\\
+
+\cellcolor{gray!6}{ondulé (carton)} & \cellcolor{gray!6}{corrugated}\\
+
+ondulé & wavy\\
+
+\cellcolor{gray!6}{ouvert d'esprit} & \cellcolor{gray!6}{open-minded}\\
+
+paresseux & lazy\\
+
+\cellcolor{gray!6}{pelliculage} & \cellcolor{gray!6}{lamination}\\
+
+permettre à qn de faire qqch & to enable sb to do stg\\
+
+\cellcolor{gray!6}{permettre à quelqu'un de faire qqch} & \cellcolor{gray!6}{to allow sb to do stg}\\
+
+piqûre à cheval & saddle-stitching\\
+
+\cellcolor{gray!6}{ \vphantom{6}& }\\
+
+\multirow[t]{-2}{*}{\raggedright\arraybackslash précédent} & \multirow[t]{-2}{*}{\raggedright\arraybackslash previous}\\
+
+\cellcolor{gray!6}{profondeur} & \cellcolor{gray!6}{depth}\\
+
+relier un livre & to bind a book\\
+
+\cellcolor{gray!6}{reliure spirales} & \cellcolor{gray!6}{coil binding}\\
+
+remarquer & to notice\\
+
+\cellcolor{gray!6}{réparer} & \cellcolor{gray!6}{to fix}\\
+
+résumer & to summarize\\
+
+\cellcolor{gray!6}{rugueux} & \cellcolor{gray!6}{rough}\\
+
+sécher & to dry\\
+
+\cellcolor{gray!6}{se débarrasser de qqch} & \cellcolor{gray!6}{to get rid of stg}\\
+
+s'intéresser à qqch & to be interested in stg\\
+
+\cellcolor{gray!6}{suivant} & \cellcolor{gray!6}{next}\\
+
+tard/en retard & late\\
+
+\cellcolor{gray!6}{télécharger} & \cellcolor{gray!6}{to download}\\
+
+téléverser & to upload\\
+
+\cellcolor{gray!6}{traiter de} & \cellcolor{gray!6}{to deal with (dealt x 2)}\\
+
+traiter une commande & to run an order\\
+
+\cellcolor{gray!6}{travailleur} & \cellcolor{gray!6}{hard-working}\\
+
+un appareil électronique & a device\\
+
+\cellcolor{gray!6}{un autocollant} & \cellcolor{gray!6}{a sticker}\\
+
+un bâtonnet (yeux) & a rod\\
+
+\cellcolor{gray!6}{un blanchet} & \cellcolor{gray!6}{un blanket}\\
+
+un bobine & a reel\\
+
+\cellcolor{gray!6}{ \vphantom{5}& }\\
+
+\multirow[t]{-2}{*}{\raggedright\arraybackslash un calage} & \multirow[t]{-2}{*}{\raggedright\arraybackslash a make-ready}\\
+
+\cellcolor{gray!6}{ \vphantom{4}& }\\
+
+\multirow[t]{-2}{*}{\raggedright\arraybackslash un client} & \multirow[t]{-2}{*}{\raggedright\arraybackslash a customer}\\
+
+\cellcolor{gray!6}{un dépliant} & \cellcolor{gray!6}{a folded leaflet}\\
+
+un devis & a quote\\
+
+\cellcolor{gray!6}{une caractéristique, une spécification} & \cellcolor{gray!6}{a feature}\\
+
+une cellule & a cell\\
+
+\cellcolor{gray!6}{une couche} & \cellcolor{gray!6}{a layer}\\
+
+un écran (d...) & a display\\
+
+\cellcolor{gray!6}{un écran (m...)} & \cellcolor{gray!6}{a monitor}\\
+
+une encoche & a notch\\
+
+\cellcolor{gray!6}{ \vphantom{3}& }\\
+
+\multirow[t]{-2}{*}{\raggedright\arraybackslash une entreprise} & \multirow[t]{-2}{*}{\raggedright\arraybackslash a company}\\
+
+\cellcolor{gray!6}{une étape} & \cellcolor{gray!6}{a step}\\
+
+une fente & a slit\\
+
+\cellcolor{gray!6}{une forme} & \cellcolor{gray!6}{a shape}\\
+
+une lame & a blade\\
+
+\cellcolor{gray!6}{une livraison} & \cellcolor{gray!6}{a delivery}\\
+
+une machine empileuse & a stacker\\
+
+\cellcolor{gray!6}{un entrepôt} & \cellcolor{gray!6}{a warehouse}\\
+
+une nuance de couleur & a hue\\
+
+\cellcolor{gray!6}{une page} & \cellcolor{gray!6}{a sheet}\\
+
+une plaque & a plate\\
+
+\cellcolor{gray!6}{une poignée} & \cellcolor{gray!6}{a handle}\\
+
+une police (de caractères) & a font\\
+
+\cellcolor{gray!6}{un équilibre} & \cellcolor{gray!6}{a balance}\\
+
+une rainure & a scoring line\\
+
+\cellcolor{gray!6}{une récompense, un prix} & \cellcolor{gray!6}{a prize}\\
+
+une usine & a factory\\
+
+\cellcolor{gray!6}{un logiciel} & \cellcolor{gray!6}{a software}\\
+
+un manchon & a shrinkable sleeve\\
+
+\cellcolor{gray!6}{ \vphantom{2}& }\\
+
+\multirow[t]{-2}{*}{\raggedright\arraybackslash un massicot} & \multirow[t]{-2}{*}{\raggedright\arraybackslash a trimmer}\\
+
+\cellcolor{gray!6}{un métier, commerce} & \cellcolor{gray!6}{a trade}\\
+
+un niveau & a level\\
+
+\cellcolor{gray!6}{un nuancier} & \cellcolor{gray!6}{a fan deck}\\
+
+un plateau & a tray\\
+
+\cellcolor{gray!6}{un pli} & \cellcolor{gray!6}{a fold}\\
+
+un pli-fenêtre & a gate-fold\\
+
+\cellcolor{gray!6}{un pli roulé (UK)} & \cellcolor{gray!6}{a roll fold}\\
+
+un pli roulé (US) & a tri/letter fold\\
+
+\cellcolor{gray!6}{un rabat} & \cellcolor{gray!6}{a flap}\\
+
+un revêtement & a coating\\
+
+\cellcolor{gray!6}{ \vphantom{1}& }\\
+
+\multirow[t]{-2}{*}{\raggedright\arraybackslash un rouleau} & \multirow[t]{-2}{*}{\raggedright\arraybackslash a roller}\\
+
+ & \\
+
+\multirow[t]{-2}{*}{\raggedright\arraybackslash un stage} & \multirow[t]{-2}{*}{\raggedright\arraybackslash an internship}\\
+
+\cellcolor{gray!6}{un trait} & \cellcolor{gray!6}{a stroke}\\
+
+un volume & a form\\
+
+\cellcolor{gray!6}{vernis sélectif} & \cellcolor{gray!6}{spot varnish}\\
+
+vif (couleur) & bright\\
 \bottomrule
 \end{longtable}
 
