@@ -3,28 +3,28 @@
 processing file: index.Rmd
 Parsed with column specification:
 cols(
-  `15 sur 20` = col_character(),
-  `15 out of 20` = col_character()
+  X1 = col_character(),
+  X2 = col_character()
 )
 Parsed with column specification:
 cols(
-  `aborder (un sujet)` = col_character(),
-  `to tackle` = col_character()
+  X1 = col_character(),
+  X2 = col_character()
 )
 Parsed with column specification:
 cols(
-  `aborder un problème` = col_character(),
-  `to address an issue` = col_character()
+  X1 = col_character(),
+  X2 = col_character()
 )
 Parsed with column specification:
 cols(
-  alimenter = col_character(),
-  `to feed (fed, fed)` = col_character()
+  X1 = col_character(),
+  X2 = col_character()
 )
 Parsed with column specification:
 cols(
-  `aimer faire qqch` = col_character(),
-  `to like doing stg` = col_character()
+  X1 = col_character(),
+  X2 = col_character()
 )
 output file: index.knit.md
 

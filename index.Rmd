@@ -201,15 +201,16 @@ Attention à l'emplacement des adverbes dits "de fréquence", qui s'insèrent so
 (W.I.P.)
 
 
-# Vocabulaire {.tabset .tabset-fade .tabset-pills}
+# Vocabulaire 
 
 
 ## DN1
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df1 <- read_delim("/home/adrien/Teaching/estienne/dn1/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df1 <- read_delim("/home/adrien/Teaching/estienne/dn1/course-data/vocabulary.csv", col_names=FALSE,delim=";",quoted_na=FALSE,na=character())
 
+colnames(df1)=c("Français", "English")
 if (knitr::is_latex_output()) {
   knitr::kable(df1, "latex", booktabs = T, longtable = T) %>%
     collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
@@ -227,8 +228,9 @@ if (knitr::is_latex_output()) {
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df2 <- read_delim("/home/adrien/Teaching/estienne/dn2/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df2 <- read_delim("/home/adrien/Teaching/estienne/dn2/course-data/vocabulary.csv", col_names=FALSE,delim=";",quoted_na=FALSE,na=character())
 
+colnames(df2)=c("Français", "English")
 if (knitr::is_latex_output()) {
   knitr::kable(df2, "latex", booktabs = T, longtable = T) %>%
     collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
@@ -248,8 +250,9 @@ if (knitr::is_latex_output()) {
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df3 <- read_delim("/home/adrien/Teaching/estienne/dn3/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df3 <- read_delim("/home/adrien/Teaching/estienne/dn3/course-data/vocabulary.csv", col_names=FALSE,delim=";",quoted_na=FALSE,na=character())
 
+colnames(df3)=c("Français", "English")
 if (knitr::is_latex_output()) {
   knitr::kable(df3, "latex", booktabs = T, longtable = T) %>%
     collapse_rows(columns = 1:2, valign = "top",latex_hline = "none") %>%
@@ -269,7 +272,9 @@ if (knitr::is_latex_output()) {
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df4 <- read_delim("/home/adrien/Teaching/estienne/bts1/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df4 <- read_delim("/home/adrien/Teaching/estienne/bts1/course-data/vocabulary.csv", col_names=FALSE,delim=";",quoted_na=FALSE,na=character())
+
+colnames(df4)=c("Français", "English")
 
 if (knitr::is_latex_output()) {
   knitr::kable(df4, "latex", booktabs = T, longtable = T) %>%
@@ -290,7 +295,9 @@ if (knitr::is_latex_output()) {
 
 ```{r, echo=FALSE, results='asis', message = FALSE }
 
-df5 <- read_delim("/home/adrien/Teaching/estienne/bts2/course-data/vocabulary.csv", col_names=TRUE,delim=";",quoted_na=FALSE,na=character())
+df5 <- read_delim("/home/adrien/Teaching/estienne/bts2/course-data/vocabulary.csv", col_names=FALSE,delim=";",quoted_na=FALSE,na=character())
+
+colnames(df5)=c("Français", "English")
 
 if (knitr::is_latex_output()) {
   knitr::kable(df5, "latex", booktabs = T, longtable = T) %>%
