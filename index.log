@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.8.26)  6 OCT 2020 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.10.7)  7 OCT 2020 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,18 +818,30 @@ LaTeX Font Info:    Font shape `TS1/Roboto-LF/light/n' will be
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-! Missing number, treated as zero.
-<to be read again> 
-                   r
-l.329 Attention aussi à \color[HTML]{red}
-                                          \emph{the news} \color{black} (``l...
- 
+LaTeX Font Info:    Font shape `T1/Roboto-LF/b/it' aliased to
+(Font)              `T1/Roboto-LF/bold/it' on input line 358.
+LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/it' will be
+(Font)              scaled to size 10.0pt on input line 358.
+[2]
+LaTeX Font Info:    Trying to load font information for T3+Roboto-LF on input l
+ine 473.
+LaTeX Font Info:    No file T3Roboto-LF.fd. on input line 473.
+
+LaTeX Font Warning: Font shape `T3/Roboto-LF/l/n' undefined
+(Font)              using `T3/cmr/m/n' instead on input line 473.
+
+! Undefined control sequence.
+<recently read> \cellcolor 
+                           
+l.511 \cellcolor
+                {gray!6}{15 sur 20} & \cellcolor{gray!6}{15 out of 20}\\ 
 Here is how much of TeX's memory you used:
- 19148 strings out of 480478
- 294040 string characters out of 5905959
- 575899 words of memory out of 5000000
- 34793 multiletter control sequences out of 15000+600000
- 615277 words of font info for 84 fonts, out of 8000000 for 9000
+ 19185 strings out of 480478
+ 294547 string characters out of 5905959
+ 576899 words of memory out of 5000000
+ 34815 multiletter control sequences out of 15000+600000
+ 621024 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,6n,96p,1194b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+
 !  ==> Fatal error occurred, no output PDF file produced!
