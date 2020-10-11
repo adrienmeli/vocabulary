@@ -30,3 +30,38 @@ output file: index.knit.md
 
 
 Output created: index.html
+
+
+processing file: index.Rmd
+Parsed with column specification:
+cols(
+  X1 = col_character(),
+  X2 = col_character()
+)
+Parsed with column specification:
+cols(
+  X1 = col_character(),
+  X2 = col_character()
+)
+Parsed with column specification:
+cols(
+  X1 = col_character(),
+  X2 = col_character()
+)
+Parsed with column specification:
+cols(
+  X1 = col_character(),
+  X2 = col_character()
+)
+Parsed with column specification:
+cols(
+  X1 = col_character(),
+  X2 = col_character()
+)
+output file: index.knit.md
+
+
+Output created: index.pdf
+Warning message:
+In (function (theme = "cayman", highlight = NULL, css = NULL, math = c("mathjax",  :
+  highlight style not found, use default instead
