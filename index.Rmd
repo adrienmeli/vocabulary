@@ -8,17 +8,16 @@ always_allow_html: true
 link-citations: true
 numbersections: true
 fontsize: 10pt
-output:
-  prettydoc::html_pretty:
-    theme: architect
-    self-contained: true
-    toc: true
+output: 
+  rmdformats::robobook:
+    self_contained: true
     highlight: haddock
     fig_width: 4
     fig_height: 3
     fig_caption: true
+    use_bookdown: false
   bookdown::pdf_document2:
-    keep_tex: false
+    keep_tex: true
     toc: false
     toc_depth: 1
     number_sections: true
@@ -28,12 +27,12 @@ output:
     fig_crop: true
     df_print: kable
     highlight: tango
-    pandoc_args: ["--extract-media","article/."]
     includes:
       in_header: /home/adrien/github/dotfiles/rmd/rmd-preamble.tex
       before_body: /home/adrien/github/dotfiles/rmd/before_body.tex
       after_body: /home/adrien/github/dotfiles/rmd/after_body.tex
 fontawesome: yes
+css: [/home/adrien/github/dotfiles/rmd/columns.css]
 ---
 
 <style>
@@ -46,6 +45,8 @@ text-align: justify}
 source('/home/adrien/github/dotfiles/r/rmarkdown-template.R')
 knitr::opts_knit$set(root.dir = '/tmp', echo = FALSE, warning = FALSE, message = FALSE, fig.align = "center")
 ```
+
+# Introduction
 
 `r ifpdf("", "[*(Download PDF)*](index.pdf)")`
 
@@ -203,7 +204,7 @@ Attention à l'emplacement des adverbes dits "de fréquence", qui s'insèrent so
 Les prépositions sont des mots suivis d'un Groupe Nominal,  ou d'une forme verbale en <-ING>.
 
 
-# Vocabulaire 
+# Vocabulaire {.tabset .tabset-fade .tabset-pills}
 
 
 ## DN1
